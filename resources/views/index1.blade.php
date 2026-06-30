@@ -183,10 +183,10 @@
 <nav class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur border-b border-yellow-700/20">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div class="flex items-center gap-3">
-            <img src="{{ asset('images/logo.png') }}" class="h-12" alt="Logo">
+            <img src="{{ asset('images/logo.png') }}" class="h-16" alt="Logo">
             <div>
                 <h2 class="title-font text-xl gold">KING FOREVER</h2>
-                <p class="text-xs text-gray-300">L'icône devenue légende</p>
+                <p class="text-xs text-gray-300">L'icône devenue légende en hommage à L'shi</p>
             </div>
         </div>
 
@@ -407,18 +407,36 @@ style="background-image:url('{{ asset('images/affiche.jpg') }}')">
         <div class="grid md:grid-cols-3 gap-8">
             <div class="sale-point-card p-8 text-center">
                 <i class="fa-solid fa-building text-4xl gold"></i>
+                <h4 class="mt-4 font-semibold">Le Boucher</h4>
+                <p class="text-white/50 text-sm mt-2">Complexe la plage</p>
+            </div>
+
+            <div class="sale-point-card p-8 text-center">
+                <i class="fa-solid fa-building text-4xl gold"></i>
+                <h4 class="mt-4 font-semibold">La Casa Mia</h4>
+                <p class="text-white/50 text-sm mt-2">Avenue Lumumba</p>
+            </div>
+
+            <div class="sale-point-card p-8 text-center">
+                <i class="fa-solid fa-building text-4xl gold"></i>
+                <h4 class="mt-4 font-semibold">Hewabora lounge</h4>
+                <p class="text-white/50 text-sm mt-2">Batiment Hypnose centre ville</p>
+            </div>
+
+            <div class="sale-point-card p-8 text-center">
+                <i class="fa-solid fa-building text-4xl gold"></i>
                 <h4 class="mt-4 font-semibold">Synergie UP</h4>
                 <p class="text-white/50 text-sm mt-2">Bureau principal</p>
             </div>
-            <div class="sale-point-card p-8 text-center">
+            {{-- <div class="sale-point-card p-8 text-center">
                 <i class="fa-solid fa-hotel text-4xl gold"></i>
                 <h4 class="mt-4 font-semibold">Pullman Karavia</h4>
                 <p class="text-white/50 text-sm mt-2">Sur place</p>
-            </div>
+            </div> --}}
             <div class="sale-point-card p-8 text-center">
                 <i class="fa-solid fa-mobile-screen-button text-4xl gold"></i>
                 <h4 class="mt-4 font-semibold">Mobile Money</h4>
-                <p class="text-white/50 text-sm mt-2">Paiement en ligne</p>
+                <p class="text-white/50 text-sm mt-2">+243 972 973 716</p>
             </div>
         </div>
 
@@ -462,10 +480,10 @@ style="background-image:url('{{ asset('images/affiche.jpg') }}')">
 <footer class="py-12 border-t border-yellow-800/30">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
         <div class="flex items-center gap-4">
-            <img src="{{ asset('images/logo.png') }}" class="h-14">
+            <img src="{{ asset('images/logo.png') }}" class="h-16">
             <div>
                 <h3 class="title-font text-2xl gold">KING FOREVER</h3>
-                <p class="text-gray-400">L'icône devenue légende</p>
+                <p class="text-gray-400">L'icône devenue légende en hommage à L'shi</p>
             </div>
         </div>
 
