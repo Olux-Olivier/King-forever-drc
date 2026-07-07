@@ -249,7 +249,7 @@ style="background-image:url('{{ asset('images/affiche.jpg') }}')">
 
 <section id="apropos" class="py-24 burgundy">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        <img src="{{ asset('images/mj.jpg') }}" class="rounded-2xl shadow-2xl">
+        <img src="{{ asset('images/michael.jpg') }}" class="rounded-2xl shadow-2xl">
         <div>
             <h2 class="title-font text-5xl gold mb-6">À propos</h2>
             <p class="leading-8">
@@ -266,6 +266,16 @@ style="background-image:url('{{ asset('images/affiche.jpg') }}')">
         <p class="text-lg leading-8 text-gray-300">
             Une soirée immersive célébrant l'artiste qui a marqué des générations à travers son talent,
             sa créativité et son impact culturel mondial.
+        </p>
+    </div>
+</section>
+
+<section class="py-24">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="title-font text-5xl gold mb-8">Pourquoi participer ?</h2>
+        <p class="text-lg leading-8 text-gray-300">
+            En participant à King Forever Lubumbashi, découvrez un spectacle où la danse, la musique, l'humour et le slam s'unissent pour rendre un hommage exceptionnel au Roi de la Pop.
+            Une soirée immersive qui vous fera revivre la magie de Michael Jackson.
         </p>
     </div>
 </section>
