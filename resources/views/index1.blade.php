@@ -176,6 +176,174 @@
             transform:translateY(-4px);
             border-color:rgba(212,175,55,.5);
         }
+
+        .scrollbar-hide::-webkit-scrollbar{
+    display:none;
+}
+
+.scrollbar-hide{
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+}
+
+.artist-card{
+    min-width:230px;
+    flex-shrink:0;
+    background:#181818;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:28px 22px;
+    text-align:center;
+    transition:.35s;
+}
+
+.artist-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(212,175,55,.45);
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.artist-avatar{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:9999px;
+    background:#242424;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.artist-avatar i{
+    font-size:36px;
+    color:#9CA3AF;
+}
+
+.artist-card h4{
+    margin-top:18px;
+    font-size:20px;
+    font-weight:600;
+    color:#fff;
+}
+
+.artist-card p{
+    margin-top:6px;
+    color:#9ca3af;
+    font-size:14px;
+}
+
+.sponsor-slider{
+
+    position:relative;
+
+    width:100%;
+
+    overflow:hidden;
+
+    mask-image:linear-gradient(to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent);
+
+}
+
+.sponsor-track{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:70px;
+
+    width:max-content;
+
+    animation:scrollSponsor 28s linear infinite;
+
+}
+
+.sponsor-slider:hover .sponsor-track{
+
+    animation-play-state:paused;
+
+}
+
+.sponsor-item{
+
+    width:220px;
+
+    height:120px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.35s;
+
+    flex-shrink:0;
+
+}
+
+.sponsor-item:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(212,175,55,.45);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+}
+
+.sponsor-item img{
+
+    max-width:140px;
+
+    max-height:70px;
+
+    object-fit:contain;
+
+    filter:grayscale(100%) brightness(.9);
+
+    opacity:.75;
+
+    transition:.35s;
+
+}
+
+.sponsor-item:hover img{
+
+    filter:none;
+
+    opacity:1;
+
+    transform:scale(1.08);
+
+}
+
+@keyframes scrollSponsor{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(calc(-50%));
+
+    }
+
+}
     </style>
 </head>
 <body>
@@ -199,52 +367,222 @@
     </div>
 </nav>
 
-<section class="relative min-h-screen flex items-center bg-cover bg-center"
-style="background-image:url('{{ asset('images/affiche.jpg') }}')">
-    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-[#5C0A18]/70"></div>
+<section class="relative min-h-screen overflow-hidden">
 
-    <div class="relative max-w-7xl mx-auto px-6">
-        <div class="max-w-3xl">
-            <span class="uppercase tracking-[8px] gold">Lubumbashi • RDC</span>
+    <!-- Image de fond -->
+    <div class="absolute inset-0">
+        <img src="{{ asset('images/affiche.jpg') }}"
+             class="w-full h-full object-cover object-center"
+             alt="King Forever">
 
-            <h1 class="title-font text-6xl md:text-8xl font-bold mt-4 gold">
-                KING FOREVER
+        <!-- Dégradés -->
+        <div class="absolute inset-0 bg-black/75"></div>
+
+        <div class="absolute inset-0 bg-gradient-to-r from-[#090909] via-[#090909]/60 to-transparent"></div>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-[#090909] via-transparent to-black/30"></div>
+
+        <!-- Halo -->
+        <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full bg-yellow-500/10 blur-3xl"></div>
+
+        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-red-900/20 blur-3xl"></div>
+
+    </div>
+
+    <!-- Contenu -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 min-h-screen flex items-center pt-28 md:pt-0">
+
+        <div class="max-w-2xl">
+
+            <span
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm uppercase tracking-[4px] text-gray-300">
+
+                <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+
+                Lubumbashi • RDC
+
+            </span>
+
+            <h1 class="title-font text-6xl md:text-8xl xl:text-9xl font-bold leading-none mt-8">
+
+                <span class="block text-white">
+                    KING
+                </span>
+
+                <span
+                    class="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700">
+
+                    FOREVER
+
+                </span>
+
             </h1>
 
-            <p class="text-2xl mt-5">
-                Une célébration exceptionnelle de l'héritage de Michael Jackson
+            <p class="mt-8 text-xl md:text-2xl text-gray-300 leading-relaxed">
+
+                Une soirée unique où la musique, la danse, l'humour,
+                le slam et la poésie célèbrent l'héritage intemporel
+                de Michael Jackson.
+
             </p>
 
-            <div class="mt-8 space-y-3 text-lg">
-                <p><i class="fa-solid fa-calendar-days gold"></i> 25 Juillet 2026</p>
-                <p><i class="fa-solid fa-location-dot gold"></i> Pullman Karavia - Chapiteau</p>
-                <p><i class="fa-solid fa-clock gold"></i> 17h30</p>
-            </div>
+            <!-- Informations -->
 
             <div class="mt-10 flex flex-wrap gap-4">
-                <a href="#tickets" class="bg-gold text-black px-8 py-4 rounded-full font-semibold">
+
+                <div
+                    class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur">
+
+                    <i class="fa-regular fa-calendar text-yellow-500"></i>
+
+                    <div>
+
+                        <p class="text-xs text-gray-400 uppercase">
+                            Date
+                        </p>
+
+                        <p class="font-medium">
+                            25 Juillet 2026
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur">
+
+                    <i class="fa-solid fa-location-dot text-yellow-500"></i>
+
+                    <div>
+
+                        <p class="text-xs text-gray-400 uppercase">
+                            Lieu
+                        </p>
+
+                        <p class="font-medium">
+                            Pullman Karavia
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur">
+
+                    <i class="fa-regular fa-clock text-yellow-500"></i>
+
+                    <div>
+
+                        <p class="text-xs text-gray-400 uppercase">
+                            Heure
+                        </p>
+
+                        <p class="font-medium">
+                            17h30
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Boutons -->
+
+            <div class="mt-12 flex flex-wrap gap-5">
+
+                <a href="#tickets"
+                    class="px-8 py-4 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold hover:scale-105 transition">
+
                     Réserver maintenant
+
                 </a>
 
-                <a href="#apropos" class="border border-yellow-600 px-8 py-4 rounded-full">
-                    Découvrir
+                <a href="#artistes"
+                    class="px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur hover:bg-white/10 transition">
+
+                    Découvrir les artistes
+
                 </a>
+
             </div>
+
         </div>
+
     </div>
+
+    <!-- Indicateur de scroll -->
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+
+        <a href="#apropos"
+            class="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition">
+
+            <span class="text-xs uppercase tracking-[4px]">
+                Défiler
+            </span>
+
+            <div
+                class="w-6 h-10 rounded-full border border-white/20 flex justify-center">
+
+                <div class="w-1 h-3 bg-yellow-500 rounded-full mt-2 animate-bounce"></div>
+
+            </div>
+
+        </a>
+
+    </div>
+
 </section>
 
-<section class="py-20">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="title-font text-5xl gold mb-12">Compte à rebours</h2>
+<section class="py-24 bg-gradient-to-b from-[#0b0b0b] to-[#111]">
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="p-8 border border-yellow-700 rounded-xl"><h3 id="days" class="text-5xl gold">00</h3><p>Jours</p></div>
-            <div class="p-8 border border-yellow-700 rounded-xl"><h3 id="hours" class="text-5xl gold">00</h3><p>Heures</p></div>
-            <div class="p-8 border border-yellow-700 rounded-xl"><h3 id="minutes" class="text-5xl gold">00</h3><p>Minutes</p></div>
-            <div class="p-8 border border-yellow-700 rounded-xl"><h3 id="seconds" class="text-5xl gold">00</h3><p>Secondes</p></div>
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-14">
+
+            <span class="uppercase tracking-[4px] text-yellow-600 text-sm">
+                Plus que
+            </span>
+
+            <h2 class="title-font text-4xl md:text-5xl mt-3">
+                Compte à rebours
+            </h2>
+
+            <p class="text-gray-400 mt-4 max-w-xl mx-auto">
+                Le rendez-vous approche. Réservez votre place dès maintenant.
+            </p>
+
         </div>
+
+        <div class="grid grid-cols-4 gap-2 md:gap-6">
+
+            <div class="count-card">
+                <h3 id="days" class="count-number">00</h3>
+                <span class="count-label">Jours</span>
+            </div>
+
+            <div class="count-card">
+                <h3 id="hours" class="count-number">00</h3>
+                <span class="count-label">Heures</span>
+            </div>
+
+            <div class="count-card">
+                <h3 id="minutes" class="count-number">00</h3>
+                <span class="count-label">Minutes</span>
+            </div>
+
+            <div class="count-card">
+                <h3 id="seconds" class="count-number">00</h3>
+                <span class="count-label">Secondes</span>
+            </div>
+
+        </div>
+
     </div>
+
 </section>
 
 <section id="apropos" class="py-24 burgundy">
@@ -280,28 +618,166 @@ style="background-image:url('{{ asset('images/affiche.jpg') }}')">
     </div>
 </section>
 
-<section id="programme" class="py-24 bg-[#111]">
+<section id="artistes" class="py-24 bg-[#111]">
     <div class="max-w-7xl mx-auto px-6">
-        <h2 class="title-font text-center text-5xl gold mb-16">Programme</h2>
 
-        <div class="grid md:grid-cols-4 gap-8">
-            <div class="p-8 border border-yellow-700 rounded-xl text-center"><i class="fa-solid fa-music text-4xl gold"></i><h3 class="mt-4">Musique Live</h3></div>
-            <div class="p-8 border border-yellow-700 rounded-xl text-center"><i class="fa-solid fa-masks-theater text-4xl gold"></i><h3 class="mt-4">Spectacle</h3></div>
-            <div class="p-8 border border-yellow-700 rounded-xl text-center"><i class="fa-solid fa-face-laugh text-4xl gold"></i><h3 class="mt-4">Humour</h3></div>
-            <div class="p-8 border border-yellow-700 rounded-xl text-center"><i class="fa-solid fa-feather-pointed text-4xl gold"></i><h3 class="mt-4">Slam & Poésie</h3></div>
-        </div>
-    </div>
-</section>
+        <div class="text-center mb-20">
+            <span class="uppercase tracking-[5px] text-yellow-600 text-sm">
+                King Forever
+            </span>
 
-<section class="py-24">
-    <div class="max-w-7xl mx-auto px-6">
-        <h2 class="title-font text-center text-5xl gold mb-16">Artistes & Invités</h2>
-        <div class="grid md:grid-cols-4 gap-8">
-            <div class="text-center"><img src="{{ asset('images/artiste1.jpg') }}" class="w-48 h-48 rounded-full mx-auto object-cover"><h3 class="mt-4">Artiste 1</h3></div>
-            <div class="text-center"><img src="{{ asset('images/artiste2.jpg') }}" class="w-48 h-48 rounded-full mx-auto object-cover"><h3 class="mt-4">Artiste 2</h3></div>
-            <div class="text-center"><img src="{{ asset('images/artiste3.jpg') }}" class="w-48 h-48 rounded-full mx-auto object-cover"><h3 class="mt-4">Artiste 3</h3></div>
-            <div class="text-center"><img src="{{ asset('images/artiste4.jpg') }}" class="w-48 h-48 rounded-full mx-auto object-cover"><h3 class="mt-4">Artiste 4</h3></div>
+            <h2 class="title-font text-5xl text-white mt-3">
+                Les artistes à l'affiche
+            </h2>
+
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                Une programmation exceptionnelle mêlant musique, humour, slam,
+                acrobaties et spectacle.
+            </p>
         </div>
+
+        <!-- MUSIQUE -->
+        <div class="mb-16">
+
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-10 h-[2px] bg-yellow-600"></div>
+                <h3 class="title-font text-3xl text-white">Musique</h3>
+            </div>
+
+            <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+
+                <div class="artist-card">
+                    <div class="artist-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h4>El L Cam's</h4>
+                    <p>Artiste musical</p>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h4>Chorale Française</h4>
+                    <p>Chorale</p>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h4>Kenny</h4>
+                    <p>Artiste musical</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- HUMOUR -->
+        <div class="mb-16">
+
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-10 h-[2px] bg-yellow-600"></div>
+                <h3 class="title-font text-3xl text-white">Humour</h3>
+            </div>
+
+            <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+
+                <div class="artist-card">
+                    <div class="artist-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h4>Marcus Joe</h4>
+                    <p>Humoriste</p>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h4>Narcisse Kokodioko</h4>
+                    <p>Humoriste</p>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h4>El Pumbu</h4>
+                    <p>Humoriste</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SLAM -->
+        <div class="mb-16">
+
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-10 h-[2px] bg-yellow-600"></div>
+                <h3 class="title-font text-3xl text-white">Slam & Poésie</h3>
+            </div>
+
+            <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+
+                <div class="artist-card">
+                    <div class="artist-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h4>Jonathan</h4>
+                    <p>Slameur</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ACROBATES -->
+        <div class="mb-16">
+
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-10 h-[2px] bg-yellow-600"></div>
+                <h3 class="title-font text-3xl text-white">Acrobates</h3>
+            </div>
+
+            <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+
+                <div class="artist-card">
+                    <div class="artist-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h4>Groupe Lushi</h4>
+                    <p>Troupe d'acrobates</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- HÔTE -->
+        <div>
+
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-10 h-[2px] bg-yellow-600"></div>
+                <h3 class="title-font text-3xl text-white">Hôte de l'événement</h3>
+            </div>
+
+            <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+
+                <div class="artist-card border-yellow-500/40">
+                    <div class="artist-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h4>Spectacle NJ</h4>
+                    <p>Maître de cérémonie</p>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 </section>
 
@@ -316,102 +792,70 @@ style="background-image:url('{{ asset('images/affiche.jpg') }}')">
             </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 items-stretch">
+        <div class="grid md:grid-cols-3 gap-8">
 
-            <article class="ticket-card p-8 md:p-10">
-                <div class="flex items-center justify-between mb-6">
-                    <span class="ticket-badge">Entrée</span>
-                    <i class="fa-solid fa-ticket text-2xl gold opacity-60"></i>
-                </div>
+    <!-- STANDARD -->
+    <div class="bg-white/5 border border-yellow-500/20 rounded-2xl p-10 text-center hover:border-yellow-500 transition duration-300">
 
-                <h3 class="title-font text-2xl tracking-widest">STANDARD</h3>
-                <p class="text-white/50 text-sm mt-2">Accès au spectacle complet</p>
+        <h3 class="title-font text-3xl uppercase tracking-[6px] text-yellow-400">
+            Standard
+        </h3>
 
-                <div class="mt-6 flex items-end gap-1">
-                    <span class="title-font text-5xl gold font-bold">30</span>
-                    <span class="text-2xl gold mb-1">$</span>
-                </div>
-                <p class="text-white/50 text-xs mt-1 uppercase tracking-wider">par personne</p>
+        <p class="text-6xl font-bold text-yellow-400 my-8">
+            30$
+        </p>
 
-                <hr class="ticket-divider">
+        <a href="https://wa.me/243972973716?text=Bonjour%20je%20souhaite%20r%C3%A9server%20un%20billet%20STANDARD%20pour%20King%20Forever."
+            target="_blank"
+            class="inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-8 py-3 rounded-full transition">
+            Réserver
+        </a>
 
-                <ul class="space-y-3 flex-1">
-                    <li class="ticket-feature"><i class="fa-solid fa-check"></i><span>Accès général au chapiteau</span></li>
-                    <li class="ticket-feature"><i class="fa-solid fa-check"></i><span>Placement libre</span></li>
-                    <li class="ticket-feature"><i class="fa-solid fa-check"></i><span>Spectacle complet</span></li>
-                </ul>
+    </div>
 
-                <div class="ticket-perforation"></div>
+    <!-- VIP -->
+    <div class="bg-gradient-to-b from-yellow-500/10 to-black border-2 border-yellow-500 rounded-2xl p-10 text-center shadow-2xl shadow-yellow-500/10 scale-105">
 
-                <a href="#contact" class="ticket-cta ticket-cta--outline mt-8">Réserver</a>
-            </article>
+        <span class="inline-block bg-yellow-500 text-black text-xs px-3 py-1 rounded-full uppercase mb-5">
+            Le plus demandé
+        </span>
 
-            <article class="ticket-card ticket-card--featured p-8 md:p-10">
-                <div class="absolute top-0 right-0">
-                    <span class="ticket-badge ticket-badge--popular rounded-none rounded-bl-xl rounded-tr-xl px-4 py-2 text-xs">
-                        Populaire
-                    </span>
-                </div>
+        <h3 class="title-font text-3xl uppercase tracking-[6px] text-yellow-400">
+            VIP
+        </h3>
 
-                <div class="flex items-center justify-between mb-6">
-                    <span class="ticket-badge">Premium</span>
-                    <i class="fa-solid fa-crown text-2xl gold"></i>
-                </div>
+        <p class="text-6xl font-bold text-yellow-400 my-8">
+            50$
+        </p>
 
-                <h3 class="title-font text-2xl tracking-widest gold">VIP</h3>
-                <p class="text-white/60 text-sm mt-2">L'expérience recommandée</p>
+        <a href="https://wa.me/243972973716?text=Bonjour%20je%20souhaite%20r%C3%A9server%20un%20billet%20VIP%20pour%20King%20Forever."
+            target="_blank"
+            class="inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-8 py-3 rounded-full transition">
+            Réserver
+        </a>
 
-                <div class="mt-6 flex items-end gap-1">
-                    <span class="title-font text-5xl gold font-bold">50</span>
-                    <span class="text-2xl gold mb-1">$</span>
-                </div>
-                <p class="text-white/50 text-xs mt-1 uppercase tracking-wider">par personne</p>
+    </div>
 
-                <hr class="ticket-divider">
+    <!-- VVIP -->
+    <div class="bg-white/5 border border-yellow-500/20 rounded-2xl p-10 text-center hover:border-yellow-500 transition duration-300">
 
-                <ul class="space-y-3 flex-1">
-                    <li class="ticket-feature"><i class="fa-solid fa-check"></i><span>Accès prioritaire à l'entrée</span></li>
-                    <li class="ticket-feature"><i class="fa-solid fa-check"></i><span>Placement réservé</span></li>
-                    <li class="ticket-feature"><i class="fa-solid fa-check"></i><span>Espace VIP dédié</span></li>
-                    <li class="ticket-feature"><i class="fa-solid fa-check"></i><span>Boisson offerte</span></li>
-                </ul>
+        <h3 class="title-font text-3xl uppercase tracking-[6px] text-yellow-400">
+            VVIP
+        </h3>
 
-                <div class="ticket-perforation"></div>
+        <p class="text-6xl font-bold text-yellow-400 my-8">
+            100$
+        </p>
 
-                <a href="#contact" class="ticket-cta ticket-cta--solid mt-8">Réserver VIP</a>
-            </article>
+        <a href="https://wa.me/243972973716?text=Bonjour%20je%20souhaite%20r%C3%A9server%20un%20billet%20VVIP%20pour%20King%20Forever."
+            target="_blank"
+            class="inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-8 py-3 rounded-full transition">
+            Réserver
+        </a>
 
-            <article class="ticket-card p-8 md:p-10">
-                <div class="flex items-center justify-between mb-6">
-                    <span class="ticket-badge">Exclusif</span>
-                    <i class="fa-solid fa-gem text-2xl gold opacity-80"></i>
-                </div>
+    </div>
 
-                <h3 class="title-font text-2xl tracking-widest">VVIP</h3>
-                <p class="text-white/50 text-sm mt-2">Le summum de l'expérience</p>
-
-                <div class="mt-6 flex items-end gap-1">
-                    <span class="title-font text-5xl gold font-bold">100</span>
-                    <span class="text-2xl gold mb-1">$</span>
-                </div>
-                <p class="text-white/50 text-xs mt-1 uppercase tracking-wider">par personne</p>
-
-                <hr class="ticket-divider">
-
-                <ul class="space-y-3 flex-1">
-                    <li class="ticket-feature"><i class="fa-solid fa-check"></i><span>Accès exclusif first row</span></li>
-                    <li class="ticket-feature"><i class="fa-solid fa-check"></i><span>Lounge VIP privé</span></li>
-                    <li class="ticket-feature"><i class="fa-solid fa-check"></i><span>Service concierge</span></li>
-                    <li class="ticket-feature"><i class="fa-solid fa-check"></i><span>Cadeau souvenir officiel</span></li>
-                </ul>
-
-                <div class="ticket-perforation"></div>
-
-                <a href="#contact" class="ticket-cta ticket-cta--premium mt-8">Réserver VVIP</a>
-            </article>
-
-        </div>
-
+</div>
         <h3 class="title-font text-4xl gold text-center mt-20 mb-10">Points de vente</h3>
 
         <div class="grid md:grid-cols-3 gap-8">
@@ -458,33 +902,189 @@ style="background-image:url('{{ asset('images/affiche.jpg') }}')">
     </div>
 </section>
 
-<section class="py-24">
+<section class="py-24 bg-[#0d0d0d] overflow-hidden">
+
     <div class="max-w-7xl mx-auto px-6">
-        <h2 class="title-font text-center text-5xl gold mb-16">Sponsors & Partenaires</h2>
-        <div class="grid md:grid-cols-4 gap-10">
-            <img src="{{ asset('images/sponsor1.png') }}" class="h-20 mx-auto">
-            <img src="{{ asset('images/sponsor2.png') }}" class="h-20 mx-auto">
-            <img src="{{ asset('images/sponsor3.png') }}" class="h-20 mx-auto">
-            <img src="{{ asset('images/sponsor4.png') }}" class="h-20 mx-auto">
+
+        <div class="text-center mb-16">
+
+            <span class="uppercase tracking-[4px] text-yellow-600 text-sm">
+                Ils nous font confiance
+            </span>
+
+            <h2 class="title-font text-5xl mt-3">
+                Sponsors & Partenaires
+            </h2>
+
+            <p class="text-gray-400 mt-4">
+                Merci à nos partenaires qui contribuent à faire de King Forever
+                une expérience inoubliable.
+            </p>
+
         </div>
+
     </div>
+
+    <div class="sponsor-slider">
+
+        <div class="sponsor-track">
+
+            <!-- Logos -->
+
+            <div class="sponsor-item">
+                <img src="{{ asset('images/sponsor1.png') }}">
+            </div>
+
+            <div class="sponsor-item">
+                <img src="{{ asset('images/sponsor2.png') }}">
+            </div>
+
+            <div class="sponsor-item">
+                <img src="{{ asset('images/sponsor3.png') }}">
+            </div>
+
+            <div class="sponsor-item">
+                <img src="{{ asset('images/sponsor4.png') }}">
+            </div>
+
+            <!-- duplication -->
+
+            <div class="sponsor-item">
+                <img src="{{ asset('images/sponsor1.png') }}">
+            </div>
+
+            <div class="sponsor-item">
+                <img src="{{ asset('images/sponsor2.png') }}">
+            </div>
+
+            <div class="sponsor-item">
+                <img src="{{ asset('images/sponsor3.png') }}">
+            </div>
+
+            <div class="sponsor-item">
+                <img src="{{ asset('images/sponsor4.png') }}">
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 <section id="contact" class="py-24 burgundy">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="title-font text-5xl gold mb-8">Contact</h2>
 
-        <p class="mb-4"><i class="fa-solid fa-phone gold"></i> +243 972 973 716</p>
-        <p class="mb-8"><i class="fa-solid fa-envelope gold"></i> contact@kingforever.cd</p>
+    <div class="max-w-7xl mx-auto px-6">
 
-        <div class="flex justify-center gap-8 text-3xl">
-            <a href="#"><i class="fab fa-facebook-f gold"></i></a>
-            <a href="#"><i class="fab fa-instagram gold"></i></a>
-            <a href="#"><i class="fab fa-tiktok gold"></i></a>
-            <a href="#"><i class="fab fa-youtube gold"></i></a>
-            <a href="#"><i class="fab fa-linkedin gold"></i></a>
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Texte -->
+
+            <div>
+
+                <span class="uppercase tracking-[4px] text-yellow-400 text-sm">
+                    Contact
+                </span>
+
+                <h2 class="title-font text-5xl mt-4">
+                    Réservez votre place dès aujourd'hui
+                </h2>
+
+                <p class="text-gray-300 mt-6 leading-8 text-lg">
+                    Pour toute réservation, demande d'information ou partenariat,
+                    notre équipe est à votre disposition.
+                    Contactez-nous directement par téléphone ou via nos réseaux sociaux.
+                </p>
+
+                <a href="https://wa.me/243972973716"
+                    target="_blank"
+                    class="inline-flex items-center gap-3 mt-10 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold px-8 py-4 rounded-full hover:scale-105 transition">
+
+                    <i class="fab fa-whatsapp text-xl"></i>
+
+                    Discuter sur WhatsApp
+
+                </a>
+
+            </div>
+
+            <!-- Cartes -->
+
+            <div class="space-y-6">
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div>
+
+                        <span class="contact-label">
+                            Téléphone
+                        </span>
+
+                        <p class="contact-value">
+                            +243 972 973 716
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+
+                        <span class="contact-label">
+                            Email
+                        </span>
+
+                        <p class="contact-value">
+                            contact@kingforever.cd
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <div>
+
+                        <span class="contact-label block mb-5">
+                            Suivez-nous
+                        </span>
+
+                        <div class="flex gap-4">
+
+                            <a href="https://web.facebook.com/kingforevermjdrc?locale=fr_FR" class="social-btn">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+
+                            <a href="https://www.instagram.com/kingforevermjdrc/" class="social-btn">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+
+                            <a href="https://www.tiktok.com/@kingforevermj" class="social-btn">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
     </div>
+
 </section>
 
 <footer class="py-12 border-t border-yellow-800/30">
@@ -497,10 +1097,8 @@ style="background-image:url('{{ asset('images/affiche.jpg') }}')">
             </div>
         </div>
 
-        <div class="text-center md:text-right mt-6 md:mt-0">
-            <p>Lubumbashi - RDC</p>
-            <p>+243 972 973 716</p>
-            <p>contact@kingforever.cd</p>
+        <div class="text-center md:text-right mt-6 md:mt-0 text-gray-300">
+            <p>&copy; {{ date('Y') }} Synergie UP. Tous droits réservés.</p>
         </div>
     </div>
 </footer>
