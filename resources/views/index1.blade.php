@@ -428,85 +428,73 @@
 
             <!-- Informations -->
 
-            <div class="mt-10 flex flex-wrap gap-4">
+           <div class="mt-10 grid grid-cols-3 gap-2">
 
+    <!-- Date -->
                 <div
-                    class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur">
+                    class="flex flex-col items-center justify-center text-center gap-2 px-2 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur">
 
-                    <i class="fa-regular fa-calendar text-yellow-500"></i>
+                    <i class="fa-regular fa-calendar text-yellow-500 text-xl"></i>
 
                     <div>
-
-                        <p class="text-xs text-gray-400 uppercase">
+                        <p class="text-[10px] sm:text-xs text-gray-400 uppercase">
                             Date
                         </p>
 
-                        <p class="font-medium">
+                        <p class="text-xs sm:text-base font-medium">
                             25 Juillet 2026
                         </p>
-
                     </div>
 
                 </div>
 
+                <!-- Lieu -->
                 <div
-                    class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur">
+                    class="flex flex-col items-center justify-center text-center gap-2 px-2 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur">
 
-                    <i class="fa-solid fa-location-dot text-yellow-500"></i>
+                    <i class="fa-solid fa-location-dot text-yellow-500 text-xl"></i>
 
                     <div>
-
-                        <p class="text-xs text-gray-400 uppercase">
+                        <p class="text-[10px] sm:text-xs text-gray-400 uppercase">
                             Lieu
                         </p>
 
-                        <p class="font-medium">
+                        <p class="text-xs sm:text-base font-medium">
                             Pullman Karavia
                         </p>
-
                     </div>
 
                 </div>
 
+                <!-- Heure -->
                 <div
-                    class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur">
+                    class="flex flex-col items-center justify-center text-center gap-2 px-2 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur">
 
-                    <i class="fa-regular fa-clock text-yellow-500"></i>
+                    <i class="fa-regular fa-clock text-yellow-500 text-xl"></i>
 
                     <div>
-
-                        <p class="text-xs text-gray-400 uppercase">
+                        <p class="text-[10px] sm:text-xs text-gray-400 uppercase">
                             Heure
                         </p>
 
-                        <p class="font-medium">
+                        <p class="text-xs sm:text-base font-medium">
                             17h30
                         </p>
-
                     </div>
 
                 </div>
 
             </div>
-
             <!-- Boutons -->
 
-            <div class="mt-12 flex flex-wrap gap-5">
-
+            <div class="mt-12 flex justify-center">
                 <a href="#tickets"
-                    class="px-8 py-4 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold hover:scale-105 transition">
+                    class="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-yellow-500/50 bg-white/10 backdrop-blur-md shadow-lg shadow-yellow-500/20 text-white font-semibold hover:bg-yellow-500 hover:text-black hover:scale-105 transition-all duration-300">
 
+                    <i class="fa-solid fa-ticket"></i>
                     Réserver maintenant
 
                 </a>
-
-                <a href="#artistes"
-                    class="px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur hover:bg-white/10 transition">
-
-                    Découvrir les artistes
-
-                </a>
-
             </div>
 
         </div>
@@ -650,8 +638,8 @@
                     <div class="artist-avatar">
                         <i class="fa-solid fa-user"></i>
                     </div>
-                    <h4>El L Cam's</h4>
-                    <p>Artiste musical</p>
+                    <h4>L Cam's</h4>
+                    <p>Artiste musicien</p>
                 </div>
 
                 <div class="artist-card">
@@ -667,7 +655,7 @@
                         <i class="fa-solid fa-user"></i>
                     </div>
                     <h4>Kenny</h4>
-                    <p>Artiste musical</p>
+                    <p>Artiste interprète</p>
                 </div>
 
             </div>
