@@ -606,6 +606,72 @@
     </div>
 </section>
 
+<section id="galerie" class="py-24 bg-[#111]">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-20">
+            <span class="uppercase tracking-[5px] text-yellow-600 text-sm">
+                Souvenirs
+            </span>
+
+            <h2 class="title-font text-5xl text-white mt-3">
+                Retour en images
+            </h2>
+
+            <p class="text-gray-400 mt-4 max-w-3xl mx-auto">
+                Revivez les moments forts de la soirée cocktail organisée en juin en hommage à Michael Jackson. Une soirée riche en émotions, en performances et en instants mémorables.
+            </p>
+        </div>
+
+        <div class="flex lg:grid lg:grid-cols-3 gap-6 overflow-x-auto lg:overflow-visible pb-4 scrollbar-hide">
+
+            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
+                <img src="" alt="Galerie 1"
+                    class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+            </div>
+
+            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
+                <img src="" alt="Galerie 2"
+                    class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+            </div>
+
+            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
+                <img src="" alt="Galerie 3"
+                    class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+            </div>
+
+            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
+                <img src="" alt="Galerie 4"
+                    class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+            </div>
+
+            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
+                <img src="" alt="Galerie 5"
+                    class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+            </div>
+
+            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
+                <img src="" alt="Galerie 6"
+                    class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
 <section id="artistes" class="py-24 bg-[#111]">
     <div class="max-w-7xl mx-auto px-6">
 
