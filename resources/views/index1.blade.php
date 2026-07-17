@@ -575,7 +575,7 @@
 
 <section id="apropos" class="py-24 burgundy">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        <img src="{{ asset('images/paysagemj.jpeg') }}" class="rounded-2xl shadow-2xl">
+        <img src="{{ asset('images/paysagemj.jpeg') }}" loading="lazy" class="rounded-2xl shadow-2xl">
         <div>
             <h2 class="title-font text-5xl gold mb-6">À propos</h2>
             <p class="leading-8">
@@ -626,42 +626,42 @@
         <div class="flex lg:grid lg:grid-cols-3 gap-6 overflow-x-auto lg:overflow-visible pb-4 scrollbar-hide">
 
             <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
-                <img src="{{ asset('images/cocktail/1.jpeg') }}" alt="Galerie 1"
+                <img src="{{ asset('images/cocktail/1.jpeg') }}" loading="lazy" alt="Galerie 1"
                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             </div>
 
             <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
-                <img src="{{ asset('images/cocktail/2.jpeg') }}" alt="Galerie 2"
+                <img src="{{ asset('images/cocktail/2.jpeg') }}" loading="lazy" alt="Galerie 2"
                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             </div>
 
             <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
-                <img src="{{ asset('images/cocktail/3.jpeg') }}" alt="Galerie 3"
+                <img src="{{ asset('images/cocktail/3.jpeg') }}" loading="lazy" alt="Galerie 3"
                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             </div>
 
             <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
-                <img src="{{ asset('images/cocktail/4.jpeg') }}" alt="Galerie 4"
+                <img src="{{ asset('images/cocktail/4.jpeg') }}" loading="lazy" alt="Galerie 4"
                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             </div>
 
             <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
-                <img src="{{ asset('images/cocktail/5.jpeg') }}" alt="Galerie 5"
+                <img src="{{ asset('images/cocktail/5.jpeg') }}" loading="lazy" alt="Galerie 5"
                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             </div>
 
             <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
-                <img src="{{ asset('images/cocktail/6.jpeg') }}" alt="Galerie 6"
+                <img src="{{ asset('images/cocktail/6.jpeg') }}" loading="lazy" alt="Galerie 6"
                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
@@ -992,57 +992,34 @@
     </div>
 
     <div class="sponsor-slider">
+    <div class="sponsor-track">
 
-        <div class="sponsor-track">
+        <!-- Première série -->
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/pullman.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/vinmart.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/katawards.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/boucher.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/synergie.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/lafrontiere.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/lian.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/casa.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/unique.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/savezedate.png') }}" loading="lazy"></div>
 
-            <!-- Logos -->
-
-            <div class="sponsor-item">
-                <img src="{{ asset('images/sponsors/pullman.png') }}">
-            </div>
-
-            <div class="sponsor-item">
-                <img src="{{ asset('images/sponsors/vinmart.png') }}">
-            </div>
-
-            <div class="sponsor-item">
-                <img src="{{ asset('images/sponsors/katawards.png') }}">
-            </div>
-
-            <div class="sponsor-item">
-                <img src="{{ asset('images/sponsors/boucher.png') }}">
-            </div>
-
-            <!-- duplication -->
-
-            <div class="sponsor-item">
-                <img src="{{ asset('images/sponsors/synergie.png') }}">
-            </div>
-
-
-            <div class="sponsor-item">
-                <img src="{{ asset('images/sponsors/lafrontiere.png') }}">
-            </div>
-
-            <div class="sponsor-item">
-                <img src="{{ asset('images/sponsors/lian.png') }}">
-            </div>
-
-            <div class="sponsor-item">
-                <img src="{{ asset('images/sponsors/casa.png') }}">
-            </div>
-
-            <div class="sponsor-item">
-                <img src="{{ asset('images/sponsors/unique.png') }}">
-            </div>
-
-            <div class="sponsor-item">
-                <img src="{{ asset('images/sponsors/savezedate.png') }}">
-            </div>
-
-        </div>
+        <!-- Deuxième série (copie IDENTIQUE) -->
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/pullman.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/vinmart.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/katawards.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/boucher.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/synergie.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/lafrontiere.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/lian.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/casa.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/unique.png') }}" loading="lazy"></div>
+        <div class="sponsor-item"><img src="{{ asset('images/sponsors/savezedate.png') }}" loading="lazy"></div>
 
     </div>
+</div>
 
 </section>
 
