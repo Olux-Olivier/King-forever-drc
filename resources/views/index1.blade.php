@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King Forever | Lubumbashi</title>
 
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="King Forever | Lubumbashi">
-    <meta property="og:description" content="Une icone dévenue légende en hommage à Lubumbashi.">
-    <meta property="og:image" content="https://king-forever.org/image.png">
-    <meta property="og:url" content="https://king-forever.org">
-    <meta property="og:site_name" content="King Forever | Lubumbashi">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>King Forever | Lubumbashi</title>
+
+<meta name="description" content="Une icône devenue légende en hommage à Lubumbashi.">
+
+<meta property="og:locale" content="fr_FR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="King Forever | Lubumbashi">
+<meta property="og:description" content="Une icône devenue légende en hommage à Lubumbashi.">
+<meta property="og:url" content="https://king-forever.org">
+<meta property="og:site_name" content="King Forever | Lubumbashi">
+<meta property="og:image" content="https://king-forever.org/image.png">
+<meta property="og:image:secure_url" content="https://king-forever.org/image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="King Forever">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="King Forever | Lubumbashi">
+<meta name="twitter:description" content="Une icône devenue légende en hommage à Lubumbashi.">
+<meta name="twitter:image" content="https://king-forever.org/image.png">
 
     {{-- @vite(['resources/css/app.css','resources/js/app.js']) --}}
 
