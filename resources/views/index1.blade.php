@@ -371,9 +371,83 @@
     }
 
 }
+
+/* ===========================
+   LOADER
+=========================== */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#080808;
+    z-index:99999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.8s;
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-logo img{
+    width:120px;
+    animation:pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(.9);
+        opacity:.6;
+    }
+    50%{
+        transform:scale(1.05);
+        opacity:1;
+    }
+}
+
+/* ===========================
+   ANIMATION AU CHARGEMENT
+=========================== */
+
+.fade-up{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s cubic-bezier(.2,.7,.2,1);
+}
+
+.fade-left{
+    opacity:0;
+    transform:translateX(-60px);
+    transition:1s;
+}
+
+.fade-right{
+    opacity:0;
+    transform:translateX(60px);
+    transition:1s;
+}
+
+.zoom-in{
+    opacity:0;
+    transform:scale(.92);
+    transition:1s;
+}
+
+.show{
+    opacity:1;
+    transform:none;
+}
     </style>
 </head>
 <body>
+<div id="loader">
+    <div class="loader-logo">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo">
+    </div>
+</div>
 
 <nav class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur border-b border-yellow-700/20">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -419,7 +493,7 @@
     <!-- Contenu -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 min-h-screen flex items-center pt-28 md:pt-0">
 
-        <div class="max-w-2xl">
+        <div class="max-w-2xl fade-left">
 
             <span
                 class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm uppercase tracking-[4px] text-gray-300">
@@ -552,7 +626,7 @@
 
 </section>
 
-<section class="py-24 bg-gradient-to-b from-[#0b0b0b] to-[#111]">
+<section class="py-24 bg-gradient-to-b from-[#0b0b0b] to-[#111] fade-up">
 
     <div class="max-w-7xl mx-auto px-6">
 
@@ -574,22 +648,22 @@
 
         <div class="grid grid-cols-4 gap-2 md:gap-6">
 
-            <div class="count-card">
+            <div class="count-card zoom-in">
                 <h3 id="days" class="count-number">00</h3>
                 <span class="count-label">Jours</span>
             </div>
 
-            <div class="count-card">
+            <div class="count-card zoom-in">
                 <h3 id="hours" class="count-number">00</h3>
                 <span class="count-label">Heures</span>
             </div>
 
-            <div class="count-card">
+            <div class="count-card zoom-in">
                 <h3 id="minutes" class="count-number">00</h3>
                 <span class="count-label">Minutes</span>
             </div>
 
-            <div class="count-card">
+            <div class="count-card zoom-in">
                 <h3 id="seconds" class="count-number">00</h3>
                 <span class="count-label">Secondes</span>
             </div>
@@ -602,8 +676,8 @@
 
 <section id="apropos" class="py-24 burgundy">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        <img src="{{ asset('images/paysagemj.jpeg') }}" loading="lazy" class="rounded-2xl shadow-2xl">
-        <div>
+        <img src="{{ asset('images/paysagemj.jpeg') }}" loading="lazy" class="rounded-2xl shadow-2xl fade-left">
+        <div class="fade-right">
             <h2 class="title-font text-5xl gold mb-6">À propos</h2>
             <p class="leading-8">
                 KING FOREVER est un spectacle hommage prestigieux réunissant musique, danse,
@@ -613,7 +687,7 @@
     </div>
 </section>
 
-<section class="py-24">
+<section class="py-24 fade-up">
     <div class="max-w-5xl mx-auto px-6 text-center">
         <h2 class="title-font text-5xl gold mb-8">Un hommage exceptionnel</h2>
         <p class="text-lg leading-8 text-gray-300">
@@ -623,7 +697,7 @@
     </div>
 </section>
 
-<section class="py-24">
+<section class="py-24 fade-up">
     <div class="max-w-5xl mx-auto px-6 text-center">
         <h2 class="title-font text-5xl gold mb-8">Pourquoi participer ?</h2>
         <p class="text-lg leading-8 text-gray-300">
@@ -633,7 +707,7 @@
     </div>
 </section>
 
-<section id="galerie" class="py-24 bg-[#111]">
+<section id="galerie" class="py-24 bg-[#111] fade-up">
     <div class="max-w-7xl mx-auto px-6">
 
         <div class="text-center mb-20">
@@ -652,42 +726,42 @@
 
         <div class="flex lg:grid lg:grid-cols-3 gap-6 overflow-x-auto lg:overflow-visible pb-4 scrollbar-hide">
 
-            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
+            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden zoom-in">
                 <img src="{{ asset('images/cocktail/1.jpeg') }}" loading="lazy" alt="Galerie 1"
                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             </div>
 
-            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
+            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden zoom-in">
                 <img src="{{ asset('images/cocktail/2.jpeg') }}" loading="lazy" alt="Galerie 2"
                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             </div>
 
-            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
+            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden zoom-in">
                 <img src="{{ asset('images/cocktail/3.jpeg') }}" loading="lazy" alt="Galerie 3"
                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             </div>
 
-            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
+            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden zoom-in">
                 <img src="{{ asset('images/cocktail/4.jpeg') }}" loading="lazy" alt="Galerie 4"
                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             </div>
 
-            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
+            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden zoom-in">
                 <img src="{{ asset('images/cocktail/5.jpeg') }}" loading="lazy" alt="Galerie 5"
                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             </div>
 
-            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden">
+            <div class="group relative min-w-[300px] lg:min-w-0 h-96 rounded-3xl overflow-hidden zoom-in">
                 <img src="{{ asset('images/cocktail/6.jpeg') }}" loading="lazy" alt="Galerie 6"
                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
@@ -699,7 +773,7 @@
     </div>
 </section>
 
-<section id="artistes" class="py-24 bg-[#111]">
+<section id="artistes" class="py-24 bg-[#111] fade-up">
     <div class="max-w-7xl mx-auto px-6">
 
         <div class="text-center mb-20">
@@ -727,7 +801,7 @@
 
             <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
 
-                <div class="artist-card">
+                <div class="artist-card zoom-in">
                     <div class="artist-avatar">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -735,7 +809,7 @@
                     <p>Artiste musicien</p>
                 </div>
 
-                <div class="artist-card">
+                <div class="artist-card zoom-in">
                     <div class="artist-avatar">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -743,7 +817,7 @@
                     <p>Chorale</p>
                 </div>
 
-                <div class="artist-card">
+                <div class="artist-card zoom-in">
                     <div class="artist-avatar">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -765,7 +839,7 @@
 
             <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
 
-                <div class="artist-card">
+                <div class="artist-card zoom-in">
                     <div class="artist-avatar">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -773,7 +847,7 @@
                     <p>Humoriste</p>
                 </div>
 
-                <div class="artist-card">
+                <div class="artist-card zoom-in">
                     <div class="artist-avatar">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -781,7 +855,7 @@
                     <p>Humoriste</p>
                 </div>
 
-                <div class="artist-card">
+                <div class="artist-card zoom-in">
                     <div class="artist-avatar">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -803,7 +877,7 @@
 
             <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
 
-                <div class="artist-card">
+                <div class="artist-card zoom-in">
                     <div class="artist-avatar">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -825,7 +899,7 @@
 
             <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
 
-                <div class="artist-card">
+                <div class="artist-card zoom-in">
                     <div class="artist-avatar">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -847,7 +921,7 @@
 
             <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
 
-                <div class="artist-card border-yellow-500/40">
+                <div class="artist-card zoom-in border-yellow-500/40">
                     <div class="artist-avatar">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -855,7 +929,7 @@
                     <p>Neville Jackson</p>
                 </div>
 
-                <div class="artist-card border-yellow-500/40">
+                <div class="artist-card zoom-in border-yellow-500/40">
                     <div class="artist-avatar">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -863,7 +937,7 @@
                     <p>Neville Jackson</p>
                 </div>
 
-                <div class="artist-card border-yellow-500/40">
+                <div class="artist-card zoom-in border-yellow-500/40">
                     <div class="artist-avatar">
                         <i class="fa-solid fa-user"></i>
                     </div>
@@ -878,7 +952,7 @@
     </div>
 </section>
 
-<section id="tickets" class="py-24 burgundy">
+<section id="tickets" class="py-24 burgundy fade-up">
     <div class="max-w-7xl mx-auto px-6">
 
         <div class="text-center mb-16">
@@ -892,7 +966,7 @@
         <div class="grid md:grid-cols-3 gap-8">
 
     <!-- STANDARD -->
-    <div class="bg-white/5 border border-yellow-500/20 rounded-2xl p-10 text-center hover:border-yellow-500 transition duration-300">
+    <div class="bg-white/5 border border-yellow-500/20 rounded-2xl p-10 text-center hover:border-yellow-500 transition duration-300 zoom-in">
 
         <h3 class="title-font text-3xl uppercase tracking-[6px] text-yellow-400">
             Standard
@@ -911,7 +985,7 @@
     </div>
 
     <!-- VIP -->
-    <div class="bg-gradient-to-b from-yellow-500/10 to-black border-2 border-yellow-500 rounded-2xl p-10 text-center shadow-2xl shadow-yellow-500/10 scale-105">
+    <div class="bg-gradient-to-b from-yellow-500/10 to-black border-2 border-yellow-500 rounded-2xl p-10 text-center shadow-2xl shadow-yellow-500/10 scale-105 zoom-in">
 
         <span class="inline-block bg-yellow-500 text-black text-xs px-3 py-1 rounded-full uppercase mb-5">
             Le plus demandé
@@ -934,7 +1008,7 @@
     </div>
 
     <!-- VVIP -->
-    <div class="bg-white/5 border border-yellow-500/20 rounded-2xl p-10 text-center hover:border-yellow-500 transition duration-300">
+    <div class="bg-white/5 border border-yellow-500/20 rounded-2xl p-10 text-center hover:border-yellow-500 transition duration-300 zoom-in">
 
         <h3 class="title-font text-3xl uppercase tracking-[6px] text-yellow-400">
             VVIP
@@ -956,20 +1030,26 @@
         <h3 class="title-font text-4xl gold text-center mt-20 mb-10">Points de vente</h3>
 
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="sale-point-card p-8 text-center">
+            <div class="sale-point-card p-8 text-center fade-up">
                 <i class="fa-solid fa-building text-4xl gold"></i>
                 <h4 class="mt-4 font-semibold">Le Boucher</h4>
                 <p class="text-white/50 text-sm mt-2">Complexe la plage</p>
             </div>
 
 
-            <div class="sale-point-card p-8 text-center">
+            <div class="sale-point-card p-8 text-center fade-up">
                 <i class="fa-solid fa-building text-4xl gold"></i>
                 <h4 class="mt-4 font-semibold">Hewabora lounge</h4>
                 <p class="text-white/50 text-sm mt-2">Batiment Hypnose centre ville</p>
             </div>
 
-            <div class="sale-point-card p-8 text-center">
+            <div class="sale-point-card p-8 text-center fade-up">
+                <i class="fa-solid fa-building text-4xl gold"></i>
+                <h4 class="mt-4 font-semibold">Catch</h4>
+                <p class="text-white/50 text-sm mt-2">Complexe la plage</p>
+            </div>
+
+            <div class="sale-point-card p-8 text-center fade-up">
                 <i class="fa-solid fa-building text-4xl gold"></i>
                 <h4 class="mt-4 font-semibold">La Casa Mia</h4>
                 <p class="text-white/50 text-sm mt-2">Avenue Lumumba</p>
@@ -980,7 +1060,7 @@
                 <h4 class="mt-4 font-semibold">Pullman Karavia</h4>
                 <p class="text-white/50 text-sm mt-2">Sur place</p>
             </div> --}}
-            <div class="sale-point-card p-8 text-center">
+            <div class="sale-point-card p-8 text-center fade-up">
                 <i class="fa-solid fa-mobile-screen-button text-4xl gold"></i>
                 <h4 class="mt-4 font-semibold">Mobile Money</h4>
                 <p class="text-white/50 text-sm mt-2">+243 972 973 716</p>
@@ -995,7 +1075,7 @@
     </div>
 </section>
 
-<section class="py-24 bg-[#0d0d0d] overflow-hidden">
+<section class="py-24 bg-[#0d0d0d] overflow-hidden fade-up">
 
     <div class="max-w-7xl mx-auto px-6">
 
@@ -1022,35 +1102,35 @@
     <div class="sponsor-track">
 
         <!-- Première série -->
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/pullman.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/vinmart.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/katawards.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/boucher.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/synergie.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/lafrontiere.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/lian.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/casa.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/unique.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/savezedate.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/pullman.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/vinmart.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/katawards.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/boucher.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/synergie.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/lafrontiere.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/lian.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/casa.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/unique.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/savezedate.png') }}" loading="lazy"></div>
 
         <!-- Deuxième série (copie IDENTIQUE) -->
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/pullman.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/vinmart.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/katawards.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/boucher.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/synergie.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/lafrontiere.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/lian.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/casa.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/unique.png') }}" loading="lazy"></div>
-        <div class="sponsor-item"><img src="{{ asset('images/sponsors/savezedate.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/pullman.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/vinmart.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/katawards.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/boucher.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/synergie.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/lafrontiere.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/lian.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/casa.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/unique.png') }}" loading="lazy"></div>
+        <div class="sponsor-item zoom-in"><img src="{{ asset('images/sponsors/savezedate.png') }}" loading="lazy"></div>
 
     </div>
 </div>
 
 </section>
 
-<section id="contact" class="py-24 burgundy">
+<section id="contact" class="py-24 burgundy fade-up">
 
     <div class="max-w-7xl mx-auto px-6">
 
@@ -1058,7 +1138,7 @@
 
             <!-- Texte -->
 
-            <div>
+            <div class="fade-left">
 
                 <span class="uppercase tracking-[4px] text-yellow-400 text-sm">
                     Contact
@@ -1088,7 +1168,7 @@
 
             <!-- Cartes -->
 
-            <div class="space-y-6">
+            <div class="space-y-6 fade-right">
 
                 <div class="contact-card">
 
@@ -1166,7 +1246,7 @@
 
 </section>
 
-<footer class="py-12 border-t border-yellow-800/30">
+<footer class="py-12 border-t border-yellow-800/30 fade-up">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
         <div class="flex items-center gap-4">
             <img src="{{ asset('images/logo.png') }}" class="h-16">
@@ -1183,6 +1263,15 @@
 </footer>
 
 <script>
+document.querySelectorAll(
+'.zoom-in,.fade-up,.fade-left,.fade-right'
+).forEach((el,index)=>{
+
+    el.style.transitionDelay=(index%6)*120+"ms";
+
+});
+
+
 const eventDate = new Date("July 25, 2026 17:30:00").getTime();
 setInterval(() => {
 const now = new Date().getTime();
@@ -1192,6 +1281,33 @@ document.getElementById('hours').innerHTML = Math.floor((distance%(1000*60*60*24
 document.getElementById('minutes').innerHTML = Math.floor((distance%(1000*60*60))/(1000*60));
 document.getElementById('seconds').innerHTML = Math.floor((distance%(1000*60))/1000);
 },1000);
+
+window.addEventListener("load",()=>{
+
+    setTimeout(()=>{
+        document.getElementById("loader").classList.add("hide");
+    },800);
+
+});
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+    threshold:.15
+});
+
+document.querySelectorAll(".fade-up,.fade-left,.fade-right,.zoom-in")
+.forEach(el=>observer.observe(el));
 </script>
 
 </body>
