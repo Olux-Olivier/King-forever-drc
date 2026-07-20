@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>King Forever | Lubumbashi</title>
 
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="King Forever | Lubumbashi">
+    <meta property="og:description" content="Une icone dévenue légende en hommage à Lubumbashi.">
+    <meta property="og:image" content="{{ asset('image.png') }}">
+    <meta property="og:url" content="https://king-forever.org">
+    <meta property="og:site_name" content="King Forever | Lubumbashi">
+
     {{-- @vite(['resources/css/app.css','resources/js/app.js']) --}}
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href=" {{ asset('favicon/favicon-96x96.png') }}" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon/favicon.svg') }}" />
+    <link rel="shortcut icon" href="{{ asset('favicon/favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}" />
+    <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
