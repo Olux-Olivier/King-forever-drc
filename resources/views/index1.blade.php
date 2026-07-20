@@ -8,7 +8,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="King Forever | Lubumbashi">
     <meta property="og:description" content="Une icone dévenue légende en hommage à Lubumbashi.">
-    <meta property="og:image" content="{{ asset('image.png') }}">
+    <meta property="og:image" content="https://king-forever.org/image.png">
     <meta property="og:url" content="https://king-forever.org">
     <meta property="og:site_name" content="King Forever | Lubumbashi">
 
