@@ -15,8 +15,8 @@
 <meta property="og:description" content="Une icône devenue légende en hommage à Lubumbashi.">
 <meta property="og:url" content="https://king-forever.org">
 <meta property="og:site_name" content="King Forever | Lubumbashi">
-<meta property="og:image" content="https://king-forever.org/image.png">
-<meta property="og:image:secure_url" content="https://king-forever.org/image.png">
+<meta property="og:image" content="https://king-forever.org/logo_king_forever.jpg">
+<meta property="og:image:secure_url" content="https://king-forever.org/logo_king_forever.jpg">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="King Forever | Lubumbashi">
 <meta name="twitter:description" content="Une icône devenue légende en hommage à Lubumbashi.">
-<meta name="twitter:image" content="https://king-forever.org/image.png">
+<meta name="twitter:image" content="https://king-forever.org/logo_king_forever.jpg">
 
     {{-- @vite(['resources/css/app.css','resources/js/app.js']) --}}
 
