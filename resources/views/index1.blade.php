@@ -976,7 +976,7 @@
             30$
         </p>
 
-        <a href="https://wa.me/243972973716?text=Bonjour%20je%20souhaite%20r%C3%A9server%20un%20billet%20STANDARD%20pour%20King%20Forever."
+        <a href="{{ route('track.standard') }}"
             target="_blank"
             class="inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-8 py-3 rounded-full transition">
             Réserver
@@ -999,7 +999,7 @@
             50$
         </p>
 
-        <a href="https://wa.me/243972973716?text=Bonjour%20je%20souhaite%20r%C3%A9server%20un%20billet%20VIP%20pour%20King%20Forever."
+        <a href="{{ route('track.vip') }}"
             target="_blank"
             class="inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-8 py-3 rounded-full transition">
             Réserver
@@ -1018,7 +1018,7 @@
             100$
         </p>
 
-        <a href="https://wa.me/243972973716?text=Bonjour%20je%20souhaite%20r%C3%A9server%20un%20billet%20VVIP%20pour%20King%20Forever."
+        <a href="{{ route('track.vvip') }}"
             target="_blank"
             class="inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-8 py-3 rounded-full transition">
             Réserver
@@ -1154,7 +1154,7 @@
                     Contactez-nous directement par téléphone ou via nos réseaux sociaux.
                 </p>
 
-                <a href="https://wa.me/243972973716"
+                <a href="{{ route('track.whatsapp') }}"
                     target="_blank"
                     class="inline-flex items-center gap-3 mt-10 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-semibold px-8 py-4 rounded-full hover:scale-105 transition">
 
